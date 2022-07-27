@@ -156,6 +156,9 @@ a.cv-anchor img {
 .project-input {
   background-color: rgb(255, 255, 255);
 }
+.input-contact-form {
+  background-color: rgb(255, 255, 255);
+}
 .project-textarea {
   resize: none;
 }
