@@ -167,9 +167,6 @@
               aria-describedby="nameContactHelp"
               required
             />
-            <div id="nameContactHelp" class="form-text">
-              Please enter your name.
-            </div>
           </div>
           <!-- project name end -->
 
@@ -183,9 +180,6 @@
               aria-describedby="emailContactHelp"
               required
             />
-            <div id="emailContactHelp" class="form-text">
-              Please enter your email.
-            </div>
           </div>
           <!-- email input end -->
 
@@ -200,90 +194,42 @@
               aria-describedby="phoneContactHelp"
               required
             />
-            <div id="phoneContactHelp" class="form-text">
-              Please enter your phone number.
-            </div>
           </div>
 
-          <!-- project description -->
+          <!-- contact select -->
 
-          <div class="form-floating mb-3">
+          <div class="form-floating mt-4">
+            <select
+              class="form-select"
+              id="floatingSelect"
+              aria-label="Floating label select example"
+            >
+              <option selected hidden>Open this select menu</option>
+              <option value="Let's Talk">Let's Talk</option>
+              <option value="Let's Collaborate">Let's Collaborate</option>
+              <option value="I'm Hiring">I'm Hiring</option>
+            </select>
+            <label for="floatingSelect">Works with selects</label>
+          </div>
+
+          <!-- contact message -->
+
+          <div class="form-floating mb-3 mt-4">
             <textarea
-              class="form-control project-textarea w-100 rounded-2 text-dark mb-2 shadow"
+              class="form-control textarea-contact-form w-100 rounded-2 text-dark mb-2 shadow"
               placeholder="Leave a comment here"
               rows="10"
               cols="10"
-              id="project-description"
+              id="message"
               style="height: 100px"
             ></textarea>
-            <label for="project-description">Description</label>
+            <label for="project-description">Message</label>
           </div>
 
           <!-- project description end -->
 
           <!-- tech checkbox -->
 
-          <div class="tech-container">
-            <label for="tech-label">Technologies :</label>
-            <div class="tech-stacks d-flex justify-content-between mt-2">
-              <div class="mb-3 form-check left-tech">
-                <div>
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="nodejs"
-                    value="nodejs"
-                    name="tech-checkbox"
-                  />
-                  <label class="form-check-label" for="nodejs">nodeJS</label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="reactjs"
-                    value="reactjs"
-                    name="tech-checkbox"
-                  />
-                  <label class="form-check-label" for="reactjs">reactJS</label>
-                </div>
-              </div>
-              <div class="mb-3 form-check right-tech">
-                <div>
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="nextjs"
-                    value="nextjs"
-                    name="tech-checkbox"
-                  />
-                  <label class="form-check-label" for="nextjs">nextJS</label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="typescript"
-                    value="typescript"
-                    name="tech-checkbox"
-                  />
-                  <label class="form-check-label" for="typescript"
-                    >typescript</label
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mb-3 project-file-input">
-            <label for="projectUploadImage" class="form-label input-img"
-              >Default file input example</label
-            >
-            <input
-              class="form-control w-100 rounded-2 text-dark mb-2 shadow"
-              type="file"
-              id="projectUploadImage"
-            />
-          </div>
           <div class="btn-container d-flex justify-content-end">
             <button type="submit" class="btn btn-primary ps-4 pe-4 rounded-5">
               Add
