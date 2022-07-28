@@ -30,10 +30,17 @@ app.get('/project', (req, res) => {
   });
 })
 
-app.get('/project-detail', (req, res) => {
+app.get('/project/:id', (req, res) => {
+  const projectId = req.params.id
   setHeader(res);
   res.render('project-detail', {
-    isLogin: isLogin
+    project: {
+      id: projectId,
+      title: '',
+      post_date: '',
+      company: '',
+      content: ''
+    }
   });
 })
 
