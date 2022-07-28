@@ -7,14 +7,14 @@ app.set('view engine', 'hbs');
 app.set("views", path.join(__dirname, "./views"));
 
 app.use('/public', express.static(path.join(__dirname, "./public")));
-
+app.use(express.urlencoded({ extended: false}));
 // console.log(__dirname);
 
 app.get('/', (req, res) => {
   res.send('Hello World');
 })
 
-const isLogin = false;
+const isLogin = true;
 
 app.get('/home', (req, res) => {
   setHeader(res)
@@ -85,6 +85,10 @@ app.get('/contact', (req, res) => {
   res.render('contact-form', {
     isLogin: isLogin
   });
+})
+
+app.post('/project', (req, res) => {
+  res.send(`<script>alert('title: ${req.body.title}, content : ${req.body.content}')</script>`);
 })
 
 const port = 5000;
