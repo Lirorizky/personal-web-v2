@@ -51,12 +51,13 @@
                   class="nav-link active me-3 active-page"
                   aria-current="page"
                   href="/home"
+                  role="button"
                   >Home</a
                 >
               </li>
               {{#if isLogin}}
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/project"
+                <a class="nav-link" aria-current="page" href="/add-project" role="button"
                   >Add project</a
                 >
               </li>
@@ -70,6 +71,7 @@
                   class="contact-nav nav-link ms-3 btn btn-dark text-white rounded-pill pe-3 ps-3 pb-1 pt-1"
                   aria-current="page"
                   href="/contact"
+                  role="button"
                   >Contact Me</a
                 >
               </li>
@@ -117,6 +119,7 @@
                 <a
                   class="contact-anchor text-decoration-none btn btn-dark ps-4 pe-4 rounded-5 fw-semibold"
                   href="/contact"
+                  role="button"
                 >
                   Let's Talk!
                 </a>
@@ -125,6 +128,7 @@
                 <a
                   href="#"
                   class="cv-anchor text-decoration-none fw-semibold text-dark"
+                  role="button"
                 >
                   Download CV
                   <img
@@ -140,6 +144,7 @@
               <a
                 href="https://www.linkedin.com/"
                 class="social-anchor pe-3 pt-3"
+                role="button"
               >
                 <img
                   src="../public/assets/icons/linkedin64.png"
@@ -150,6 +155,7 @@
               <a
                 href="https://www.instagram.com/"
                 class="social-anchor ps-3 pe-3 pt-3"
+                role="button"
               >
                 <img
                   src="../public/assets/icons/instagram64.png"
@@ -160,6 +166,7 @@
               <a
                 href="https://www.facebook.com/"
                 class="social-anchor ps-3 pe-3 pt-3"
+                role="button"
               >
                 <img
                   src="../public/assets/icons/fb64.png"
@@ -170,6 +177,7 @@
               <a
                 href="https://twitter.com/?lang=en"
                 class="social-anchor ps-3 pt-3"
+                role="button"
               >
                 <img
                   src="../public/assets/icons/twitter64.png"
@@ -205,31 +213,31 @@
         <section class="base-page-container-2">
           <h3 class="pt-5 m-0 text-center fw-semibold">My Project</h3>
           <div class="project-showcase d-flex flex-wrap" id="project-showcase">
+            {{#each projectCard}}
             <div class="card shadow rounded-4 mt-5" style="width: 20rem">
               <a
-                href="/project/1"
+                href="/project/{{this.id}}"
                 class="text-decoration-none text-dark"
               >
                 <img
-                  src="../public/assets/images/holding_phone.jpg"
+                  src="./public/assets/images/holding_phone.jpg"
                   class="card-img-top rounded-top"
                   alt="..."
                 />
               </a>
               <div class="card-body">
                 <a
-                  href="/project/1"
+                  href="/project/{{this.id}}"
                   class="text-decoration-none text-dark"
                 >
                   <h5 class="card-title fs-6 fw-semibold">
-                    Dumbways Mobile App - 2022
+                    {{this.title}}
                   </h5>
                   <div class="project-card-duration">
-                    <p>Duration : 3 Months</p>
+                    <p>{{this.duration}}</p>
                   </div>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    {{this.description}}
                   </p>
                   <div class="project-card-tech">
                     <img
@@ -249,7 +257,6 @@
                     />
                   </div>
                 </a>
-                {{#if isLogin}}
                 <div
                   class="project-card-actions d-flex mt-3 justify-content-betwee"
                 >
@@ -259,14 +266,14 @@
                     >Edit</a
                   >
                   <a
-                    href="#"
+                    href="/delete-project/{{@index}}"
                     class="btn btn-block btn-danger mt-2 rounded-5 w-100 ms-1 fw-semibold"
                     >Delete</a
                   >
                 </div>
-                {{/if}}
               </div>
             </div>
+            {{/each}}
           </div>
         </section>
       </div>

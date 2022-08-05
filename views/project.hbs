@@ -61,7 +61,7 @@
                 <a
                   class="nav-link active active-page"
                   aria-current="page"
-                  href="/project"
+                  href="/add-project"
                   >Add project</a
                 >
               </li>
@@ -95,18 +95,19 @@
       class="base-page-container d-flex justify-content-center align-items-center"
     >
       <div class="align-center h-100 w-25">
-        <form class="contact-form" onsubmit="addProject(event)">
+        <form class="contact-form" action="/home" method="POST" onsubmit="addProject(event)">
           <h4 class="text-center mt-4">Add Project</h4>
 
           <!-- project name -->
           <div class="project-name-input mb-3">
-            <label for="project-name" class="form-label mt-3"
+            <label for="project-names" class="form-label mt-3"
               >Project Name</label
             >
             <input
               type="text"
               class="form-control project-input w-100 rounded-2 text-dark mb-2 shadow"
               id="project-name"
+              name="projectName"
               aria-describedby="nameProjectHelp"
             />
             <div id="nameProjectHelp" class="form-text">
@@ -125,6 +126,7 @@
                 type="date"
                 class="form-control project-input w-100 rounded-2 text-dark mb-2 shadow"
                 id="project-start-date"
+                name="projectStart"
                 aria-describedby="startDateHelp"
               />
             </div>
@@ -134,6 +136,7 @@
                 type="date"
                 class="form-control project-input w-100 rounded-2 text-dark mb-2 shadow"
                 id="project-end-date"
+                name="projectEnd"
                 aria-describedby="endDateHelp"
               />
             </div>
@@ -149,6 +152,7 @@
               rows="10"
               cols="10"
               id="project-description"
+              name="projectDescription"
               style="height: 100px"
             ></textarea>
             <label for="project-description">Description</label>
@@ -168,7 +172,7 @@
                     class="form-check-input"
                     id="nodejs"
                     value="nodejs"
-                    name="tech-checkbox"
+                    name="techCheckbox"
                   />
                   <label class="form-check-label" for="nodejs">nodeJS</label>
                 </div>
@@ -178,7 +182,7 @@
                     class="form-check-input"
                     id="reactjs"
                     value="reactjs"
-                    name="tech-checkbox"
+                    name="techCheckbox"
                   />
                   <label class="form-check-label" for="reactjs">reactJS</label>
                 </div>
@@ -190,7 +194,7 @@
                     class="form-check-input"
                     id="nextjs"
                     value="nextjs"
-                    name="tech-checkbox"
+                    name="techCheckbox"
                   />
                   <label class="form-check-label" for="nextjs">nextJS</label>
                 </div>
@@ -200,7 +204,7 @@
                     class="form-check-input"
                     id="typescript"
                     value="typescript"
-                    name="tech-checkbox"
+                    name="techCheckbox"
                   />
                   <label class="form-check-label" for="typescript"
                     >typescript</label
@@ -210,13 +214,14 @@
             </div>
           </div>
           <div class="mb-3 project-file-input">
-            <label for="projectUploadImage" class="form-label input-img"
+            <label for="project-upload-image" class="form-label input-img"
               >Upload</label
             >
             <input
               class="form-control w-100 rounded-2 text-dark mb-2 shadow"
               type="file"
-              id="projectUploadImage"
+              id="project-upload-image"
+              name="projectUpload"
             />
           </div>
           <div class="btn-container d-flex justify-content-end">
@@ -230,7 +235,7 @@
     {{/if}}
     <!-- project form end -->
 
-    <script src="./project-form.js"></script>
+    <script src="../project-form.js"></script>
     <!-- <script src="./project-detail.js"></script> -->
   </body>
 </html>

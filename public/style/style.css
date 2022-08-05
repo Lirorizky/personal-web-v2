@@ -84,6 +84,9 @@ a.cv-anchor img {
   /* background-color: #62bbc1; */
   padding-left: 10vw;
 }
+div.card {
+  margin-left: 65px;
+}
 .project-card-duration p {
   margin-top: 0px;
   font-size: small;
@@ -126,10 +129,11 @@ a.cv-anchor img {
   width: 50px;
 }
 .tech-info-icons label {
-  margin-right: auto;
+  margin-right: 25px;
   font-weight: 600;
   margin-left: 10px;
 }
+
 /* project detail tech end */
 
 /* project detail description start */

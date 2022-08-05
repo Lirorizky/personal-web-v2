@@ -1,6 +1,7 @@
+
 function submitForm() {
 
-  const emailReceiver = "liro.zke@gmail.com";
+  const emailReceiver = "lore@gmail.com";
 
   let name = document.getElementById("name").value;
   let email = document.getElementById('email').value;
@@ -37,13 +38,13 @@ function submitForm() {
   } else if (email == "") {
     return alert("email must be filled in...");
   } else if (phone == ""){
-    return alert("phone number must be filled in...")
+    return alert("phone number must be filled in...");
   } else if (subject == "") {
-    return alert("subject must be filled in...")
+    return alert("subject must be filled in...");
   } else if (message == "") {
-    return alert("message must be filled in...")
+    return alert("message must be filled in...");
   } else {
-    alert("opening mail...")
+    alert("opening mail...");
   }
 
   const a = document.createElement('a');

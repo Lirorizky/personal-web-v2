@@ -32,7 +32,7 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
-    <script src="./project-detail.js"></script>
+    <script src="../project-detail.js"></script>
   </head>
   <body class="project-detail-body">
     <!-- Navbar Start-->
@@ -56,13 +56,11 @@
                   >Home</a
                 >
               </li>
-              {{#if isLogin}}
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/project"
+                <a class="nav-link" aria-current="page" href="/add-project"
                   >Add Project</a
                 >
               </li>
-              {{/if}}
             </ul>
           </div>
           <div class="right-side-nav d-flex" role="search">
@@ -117,23 +115,29 @@
           <div class="detail-info-tech">
             <h3>Technologies</h3>
             <div class="tech-info-icons">
-              <div class="tech-info-icons-left d-flex align-items-center">
+              <div class="tech-info-icons-left d-flex align-items-center ps-2">
                 <img
-                  src="../public/assets/icons/playstore-color.png"
+                  src="{{project.tech1_img}}"
                   alt=""
                   id="playstore-icon"
                 />
-                <label for="playstore-icon fw-semibold">Google Play</label>
+                <label for="playstore-icon fw-semibold">{{project.tech1_label}}</label>
                 <img
-                  src="../public/assets/icons/android-color.png"
+                  src="{{project.tech2_img}}"
                   alt=""
                   id="android-icon"
                 />
-                <label for="android-icon">Android OS</label>
+                <label for="android-icon">{{project.tech2_label}}</label>
               </div>
-              <div class="tech-info-icons-right d-flex align-items-center">
-                <img src="../public/assets/icons/javacolor.png" alt="" id="java-icon" />
-                <label for="java-icon">Java</label>
+              <div class="tech-info-icons-right d-flex align-items-center ps-2">
+                <div>
+                  <img src="{{project.tech3_img}}" alt="" id="java-icon" />
+                  <label for="java-icon">{{project.tech3_label}}</label>
+                </div>
+                <div>
+                  <img src="{{project.tech4_img}}" alt="" id="java-icon" />
+                  <label for="java-icon">{{project.tech4_label}}</label>
+                </div>
               </div>
             </div>
           </div>
